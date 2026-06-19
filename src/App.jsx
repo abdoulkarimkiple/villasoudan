@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Phone, MessageCircle } from "lucide-react";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
@@ -11,10 +12,23 @@ import Testimonials from "./components/Testimonials.jsx";
 import Location from "./components/Location.jsx";
 import Footer from "./components/Footer.jsx";
 import { PHONE_NUMBER, whatsappUrl } from "./data/contact.js";
+import BrandLogo from "./components/BrandLogo.jsx";
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setLoaded(true), 900);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-ivory text-ink">
+      <div className={`loading-screen ${loaded ? "is-hidden" : ""}`} aria-hidden={loaded}>
+        <div className="loading-ring">
+          <BrandLogo compact />
+        </div>
+      </div>
       <Header />
       <main>
         <Hero />
@@ -26,7 +40,7 @@ function App() {
         <Gallery />
         <Testimonials />
         <Location />
-        <section className="section-pad bg-ink text-ivory">
+        <section className="section-pad brand-pattern bg-ink text-ivory">
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 md:grid-cols-[1.2fr_0.8fr] md:px-8">
             <div>
               <p className="eyebrow text-gold">Réservation rapide</p>
@@ -53,7 +67,7 @@ function App() {
       </main>
       <Footer />
       <a
-        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_18px_45px_rgba(0,0,0,0.25)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(37,211,102,0.32)]"
+        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full border border-white/18 bg-villa-red text-white shadow-[0_18px_45px_rgba(255,36,0,0.28)] transition hover:-translate-y-1 hover:bg-white hover:text-ink"
         href={whatsappUrl()}
         target="_blank"
         rel="noreferrer"

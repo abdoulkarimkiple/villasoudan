@@ -12,7 +12,7 @@ const comfort = [
 
 export default function Rooms() {
   return (
-    <section id="hotel" className="section-pad bg-sand">
+    <section id="hotel" className="section-pad bg-sand text-ink">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
           <div>
@@ -26,7 +26,7 @@ export default function Rooms() {
 
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {comfort.map(([Icon, label]) => (
-            <div key={label} className="flex items-center gap-3 border border-ink/10 bg-ivory px-4 py-4">
+            <div key={label} className="flex items-center gap-3 rounded-[8px] border border-ink/10 bg-ivory px-4 py-4 shadow-sm">
               <Icon className="text-terracotta" size={20} />
               <span className="text-sm font-semibold uppercase tracking-[0.16em]">{label}</span>
             </div>
@@ -41,23 +41,23 @@ export default function Rooms() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.08, duration: 0.45 }}
-              className="overflow-hidden border border-ink/10 bg-ivory shadow-soft"
+              className="premium-card overflow-hidden"
             >
               <img className="aspect-[1.18] w-full object-cover" src={room.image} alt={room.title} />
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="font-serif text-2xl">{room.title}</h3>
-                  <p className="max-w-[9rem] text-right text-sm font-semibold text-terracotta">{room.price}</p>
+                  <p className="max-w-[9rem] text-right text-sm font-semibold text-villa-red">{room.price}</p>
                 </div>
                 <div className="mt-5 grid gap-3">
                   {room.features.map((feature) => (
-                    <span key={feature} className="flex items-center gap-2 text-sm text-ink/72">
+                    <span key={feature} className="flex items-center gap-2 text-sm text-white/72">
                       <Check size={16} className="text-palm" />
                       {feature}
                     </span>
                   ))}
                 </div>
-                <a className="btn-secondary mt-6 w-full justify-center" href={whatsappUrl(`Bonjour Villa Soudan, je souhaite réserver : ${room.title}.`)} target="_blank" rel="noreferrer">
+                <a className="btn-secondary mt-6 w-full justify-center border-white/20 text-white hover:bg-white hover:text-ink" href={whatsappUrl(`Bonjour Villa Soudan, je souhaite réserver : ${room.title}.`)} target="_blank" rel="noreferrer">
                   <MessageCircle size={18} />
                   Réserver
                 </a>

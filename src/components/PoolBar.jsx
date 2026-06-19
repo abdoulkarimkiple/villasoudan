@@ -14,7 +14,8 @@ export default function PoolBar() {
     <section id="piscine-bar" className="relative overflow-hidden bg-ink text-ivory">
       <div className="absolute inset-0">
         <img className="h-full w-full object-cover opacity-45" src={poolImage} alt="Piscine et bar Villa Soudan" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(12,12,10,0.94),rgba(12,12,10,0.62),rgba(12,12,10,0.34))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.95),rgba(0,0,0,0.66),rgba(0,0,0,0.36))]" />
+        <div className="brand-pattern absolute inset-0 opacity-30" />
       </div>
       <div className="section-pad relative mx-auto max-w-7xl px-5 md:px-8">
         <motion.div
@@ -32,7 +33,7 @@ export default function PoolBar() {
         </motion.div>
         <div className="mt-12 grid gap-4 md:grid-cols-4">
           {moments.map(([Icon, label]) => (
-            <div key={label} className="border border-white/14 bg-ivory/8 p-5 backdrop-blur-md">
+            <div key={label} className="premium-card p-5 backdrop-blur-md">
               <Icon className="text-gold" size={25} />
               <p className="mt-5 font-serif text-2xl">{label}</p>
             </div>

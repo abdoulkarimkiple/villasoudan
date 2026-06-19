@@ -3,7 +3,7 @@ import { testimonials } from "../data/testimonials.js";
 
 export default function Testimonials() {
   return (
-    <section className="section-pad bg-ink text-ivory">
+    <section className="section-pad brand-pattern bg-ink text-ivory">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="section-heading">
           <p className="eyebrow text-gold">Avis clients</p>
@@ -12,7 +12,7 @@ export default function Testimonials() {
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((testimonial) => (
-            <article key={testimonial.name} className="border border-white/12 bg-ivory/8 p-6 backdrop-blur-sm">
+            <article key={testimonial.name} className="premium-card p-6 backdrop-blur-sm">
               <Quote className="text-gold" size={28} />
               <div className="mt-5 flex gap-1 text-gold">
                 {Array.from({ length: 5 }).map((_, index) => (

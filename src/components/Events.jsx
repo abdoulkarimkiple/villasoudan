@@ -13,7 +13,7 @@ const eventTypes = [
 
 export default function Events() {
   return (
-    <section id="evenements" className="section-pad bg-sand">
+    <section id="evenements" className="section-pad bg-sand text-ink">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[1fr_0.92fr] lg:items-center">
         <div>
           <p className="eyebrow">Événementiel</p>
@@ -23,7 +23,7 @@ export default function Events() {
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {eventTypes.map((item) => (
-              <div key={item} className="flex items-center gap-3 bg-ivory px-4 py-4">
+              <div key={item} className="flex items-center gap-3 rounded-[8px] border border-ink/10 bg-ivory px-4 py-4">
                 <CalendarCheck size={19} className="text-palm" />
                 <span className="font-semibold">{item}</span>
               </div>
@@ -35,8 +35,10 @@ export default function Events() {
           </a>
         </div>
         <div className="relative">
-          <img className="aspect-[0.9] w-full object-cover shadow-soft" src={eventImage} alt="Événement à Villa Soudan" />
-          <div className="absolute -bottom-6 left-5 right-5 grid grid-cols-2 gap-3 bg-ink p-5 text-ivory shadow-soft md:left-8 md:right-8">
+          <div className="arch-frame overflow-hidden">
+            <img className="aspect-[0.9] w-full object-cover shadow-soft" src={eventImage} alt="Événement à Villa Soudan" />
+          </div>
+          <div className="premium-card absolute -bottom-6 left-5 right-5 grid grid-cols-2 gap-3 p-5 text-ivory md:left-8 md:right-8">
             <div>
               <UsersRound className="text-gold" />
               <p className="mt-3 font-serif text-2xl">Familial</p>

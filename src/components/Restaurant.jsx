@@ -12,7 +12,7 @@ const highlights = [
 
 export default function Restaurant() {
   return (
-    <section id="restaurant" className="section-pad bg-ivory">
+    <section id="restaurant" className="section-pad bg-ivory text-ink">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -21,8 +21,10 @@ export default function Restaurant() {
           transition={{ duration: 0.55 }}
           className="relative"
         >
-          <img className="aspect-[0.94] w-full object-cover shadow-soft" src={restaurantImage} alt="Restaurant Villa Soudan" />
-          <div className="absolute bottom-5 left-5 right-5 bg-ink/88 p-5 text-ivory backdrop-blur-md">
+          <div className="arch-frame overflow-hidden">
+            <img className="aspect-[0.94] w-full object-cover shadow-soft" src={restaurantImage} alt="Restaurant Villa Soudan" />
+          </div>
+          <div className="absolute bottom-5 left-5 right-5 rounded-[8px] border border-villa-red/25 bg-ink/88 p-5 text-ivory backdrop-blur-md">
             <p className="font-serif text-2xl">Table généreuse, service élégant</p>
             <p className="mt-2 text-sm leading-6 text-ivory/68">Idéal pour les déjeuners, dîners, moments familiaux et commandes rapides.</p>
           </div>
@@ -40,7 +42,7 @@ export default function Restaurant() {
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {highlights.map(([Icon, label]) => (
-              <div key={label} className="flex items-center gap-3 border border-ink/10 bg-sand px-4 py-4">
+              <div key={label} className="flex items-center gap-3 rounded-[8px] border border-ink/10 bg-sand px-4 py-4">
                 <Icon size={20} className="text-terracotta" />
                 <span className="font-semibold">{label}</span>
               </div>

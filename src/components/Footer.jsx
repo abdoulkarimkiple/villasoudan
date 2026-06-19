@@ -1,5 +1,6 @@
 import { Camera, MessageCircle, Phone } from "lucide-react";
 import { INSTAGRAM_URL, PHONE_NUMBER, whatsappUrl } from "../data/contact.js";
+import BrandLogo from "./BrandLogo.jsx";
 
 const links = [
   ["Accueil", "#accueil"],
@@ -14,10 +15,10 @@ const services = ["Hôtel", "Restaurant", "Bar", "Piscine", "Événementiel", "L
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080806] px-5 py-12 text-ivory md:px-8">
+    <footer className="brand-pattern bg-[#000000] px-5 py-12 text-ivory md:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.3fr_0.8fr_0.8fr_1fr]">
         <div>
-          <p className="font-serif text-3xl text-gold">Villa Soudan</p>
+          <BrandLogo />
           <p className="mt-4 max-w-sm leading-7 text-ivory/60">
             Hôtel, restaurant, bar, piscine et événementiel à Bamako, Mali.
           </p>

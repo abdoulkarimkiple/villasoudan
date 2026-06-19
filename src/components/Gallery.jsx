@@ -5,7 +5,7 @@ import { INSTAGRAM_URL } from "../data/contact.js";
 
 export default function Gallery() {
   return (
-    <section id="galerie" className="section-pad bg-ivory">
+    <section id="galerie" className="section-pad bg-ivory text-ink">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="section-heading mx-0 text-left">
@@ -29,11 +29,11 @@ export default function Gallery() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.04, duration: 0.4 }}
-              className={`group relative overflow-hidden ${index === 0 || index === 4 ? "row-span-2" : ""} ${index === 1 ? "md:col-span-2" : ""}`}
+              className={`group relative overflow-hidden rounded-[8px] border border-villa-red/20 bg-ink ${index === 0 || index === 4 ? "row-span-2" : ""} ${index === 1 ? "md:col-span-2" : ""}`}
             >
               <img className="h-full w-full object-cover transition duration-700 group-hover:scale-105" src={item.image} alt={item.label} />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-80" />
-              <span className="absolute bottom-4 left-4 bg-ivory/92 px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-ink">
+              <span className="absolute bottom-4 left-4 rounded-[8px] bg-villa-red px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white">
                 {item.label}
               </span>
             </motion.a>

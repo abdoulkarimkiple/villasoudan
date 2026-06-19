@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { whatsappUrl } from "../data/contact.js";
+import BrandLogo from "./BrandLogo.jsx";
 
 const navItems = [
   ["Accueil", "#accueil"],
@@ -31,14 +32,8 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
-        <a href="#accueil" className="group flex items-center gap-3 text-ivory">
-          <span className="grid h-11 w-11 place-items-center border border-gold/60 bg-ivory/8 font-serif text-xl text-gold">
-            VS
-          </span>
-          <span>
-            <span className="block font-serif text-xl leading-none tracking-wide">Villa Soudan</span>
-            <span className="text-[0.66rem] uppercase tracking-[0.3em] text-ivory/55">Bamako</span>
-          </span>
+        <a href="#accueil" className="group text-ivory" aria-label="Villa Soudan accueil">
+          <BrandLogo className="scale-[0.92] origin-left" />
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
